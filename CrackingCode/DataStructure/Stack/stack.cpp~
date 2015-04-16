@@ -1,0 +1,98 @@
+#include <iostream>
+#include <cstring>
+#include <new>
+
+using namespace std;
+
+template <class T>
+struct Node {
+  T value;
+  Node* next;
+
+
+  Node(T _value) {
+    value = _value;
+    next = NULL;
+  }
+
+  void addNode(T value) {
+    Node* cur = this;
+    Node* newNode = new Node(value);
+    while(cur->next != NULL) {
+      cur = cur->next;
+    }
+    cur->next = newNode;
+    return;
+  }
+
+  void print() {
+    Node* cur = this;
+    while (cur != NULL) {
+      cout << cur->value << " addr: " << cur << endl;
+      cur = cur->next;
+    }
+    cout << endl;
+  }
+};
+
+template <class T>
+struct Stack{
+
+  Node<T> *top;
+
+  Stack(){
+    top = NULL;
+  }
+
+  Node<T>* pop() {
+    if (top != NULL) {
+      Node<T> *ret = top;
+      top = top->next;
+      return ret;
+    }
+    else
+      return NULL;
+  }
+
+  void push(T value) {
+    cout << "pusing " << value << endl;
+    Node<T> *newNode = new Node<T>(value);
+    if (top != NULL) {
+      newNode->next = top;
+    }
+    top = newNode;
+  }
+
+  void traverse() {
+    Node<T> *cur = top;
+    while (cur != NULL) {
+      cout << cur->value << " addr: " << cur << endl;
+      cur = cur->next;
+    }
+  }
+};
+
+int main() {
+
+  Stack<int> stack;
+  int n = 5;
+  for (int i = 0; i < n; i++) {
+    stack.push(i);
+    //intHead->addNode(i+1);
+  }
+
+  for (int i = 0; i < n; i++) {
+    cout << stack.pop()->value << endl;
+  }
+  Node<int>* out = stack.pop();
+  if (out == NULL) {
+    cout << "Stack Underflow" << endl;
+  }
+  out = stack.pop();
+  if (out == NULL) {
+    cout << "Stack Underflow" << endl;
+  }
+
+
+  return 0;
+}

@@ -1,0 +1,16 @@
+#include <iostream>
+
+using std::endl;
+
+class GamePlayer{
+public:
+  static const int NumTurns = 5;
+};
+
+int main() {
+
+  GamePlayer p1, p2;
+  //std::cout << "p1.NumTurns:" << &(p1.NumTurns) << endl;
+  //std::cout << "p2.NumTurns:" << &(p2.NumTurns) << endl;
+  return 0;
+}

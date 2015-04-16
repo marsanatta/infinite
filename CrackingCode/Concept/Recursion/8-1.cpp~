@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cstring>
+#include <string>
+#define TABLE_SIZE 1024
+
+using namespace std;
+
+int fTable[TABLE_SIZE];
+int fDP(int n) {
+  if (fTable[n] != -1)
+    return fTable[n];
+  fTable[n] = fDP(n-1) + fDP(n-2);
+  return fTable[n];
+}
+
+int f(int n) {
+  if (n == 0) {
+    return 0;
+  }
+  else if (n == 1) {
+    return 1;
+  }
+  return f(n-1) + f(n-2);
+}
+
+int main() {
+
+  memset(fTable, -1, sizeof(int) * TABLE_SIZE);
+  fTable[0] = 0;
+  fTable[1] = 1;
+  
+  for (int i = 0; i < 32; i++) {
+    cout << "fibonacci " << i << ":" << fDP(i) << endl;
+  }
+  return 0;
+}

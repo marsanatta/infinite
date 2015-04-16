@@ -1,0 +1,15 @@
+#include "stack.h"
+
+void Stack::push(T* value) {
+  buffer.push_back(value);
+}
+
+T* Stack::pop() {
+  T* ret = buffer.back();
+  buffer.pop_back();
+  return ret;
+}
+bool Stack::isEmpty() {
+  return buffer.size() == 0 ? true : false;
+}
+

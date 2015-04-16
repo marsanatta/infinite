@@ -1,0 +1,36 @@
+#ifndef PROJECTMANAGER_H_
+#define PROJECTMANAGER_H_
+
+
+#include <string>
+#include <new>
+#include "Employee.h"
+#include "Call.h"
+#define PROJECT_MANAGER_NAME "Peter"
+#include <iostream>
+
+using std::string;
+using std::cout;
+using std::endl;
+
+class ProjectManager : public Employee{
+
+public:
+
+  static ProjectManager* getInstance() {
+    static ProjectManager *instance;
+    if(instance == NULL) {
+      cout << "initiating ProjectManager... " << endl;
+      instance = new ProjectManager(PROJECT_MANAGER_NAME);
+      instance->handleCall = new InterruptHandleCall(Call::HARD, NULL, instance);
+    }
+    return instance;
+  }
+
+protected:
+  ProjectManager(string _name)
+    : Employee(_name){
+    }
+};
+
+#endif

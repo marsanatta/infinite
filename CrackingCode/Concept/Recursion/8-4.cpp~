@@ -1,0 +1,35 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+vector<string> getAllPermutations(string const &s, int len) {
+  vector<string> perms;
+  string appendStr;
+  appendStr += s[len-1];
+  if (len == 1) {
+    perms.push_back(appendStr);
+    return perms;
+  }
+  vector<string> tempPerms = getAllPermutations(s, len - 1);
+  for (auto perm : tempPerms) {
+    for (int i = 0; i < perm.length()+1; i++) {
+      string newPerm(perm);
+      newPerm.insert(i, appendStr);
+      perms.push_back(newPerm);
+    }
+  }
+  return perms;
+}
+
+int main() {
+
+  string s;
+  cin >> s;
+  vector<string> perms = getAllPermutations(s, s.length());
+  for (auto s : perms) {
+    cout << s << endl;
+  }
+  return 0;
+}

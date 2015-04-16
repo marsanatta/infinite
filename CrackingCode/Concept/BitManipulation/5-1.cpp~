@@ -1,0 +1,27 @@
+#include <iostream>
+#include "BitManipulation.h"
+
+using namespace std;
+
+int transform(int n, int m, int i, int j) {
+  int max = ~0;
+  int left = max - (1 << (j+1) - 1);
+  int right = (1 << i) - 1;
+  int mask = left | right;
+  return (n & mask) | (m << i);
+}
+
+int main() {
+
+  int n1, n2;
+  cin >> n1;
+  //cin >> n2;
+  cout << "n1: " << intToBinaryString(n1) << endl;
+  //cout << "n2: " << intToBinaryString(n2) << endl;
+  cout << "first bit of n1: " << findIntFirstOnePos(n1) << endl;
+  //int n3 = transform(n1, n2, 2, 6);
+  //cout << "n3: " << intToBinaryString(n3) << endl;
+
+
+  return 0;
+}

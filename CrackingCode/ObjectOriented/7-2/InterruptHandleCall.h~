@@ -1,0 +1,13 @@
+#include "HandleCallBehavior.h"
+#include "Call.h"
+
+class SuperHandleCall : public HandleCallBehavior {
+
+public:
+  Employee* handleCall(Call &c);
+  SuperHandleCall(Call::Difficulty _ability, Employee* _boss, Employee* _self)
+  :HandleCallBehavior(_ability, _boss, _self){
+  }
+
+
+};

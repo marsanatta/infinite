@@ -1,0 +1,10 @@
+#include <iostream>
+#include "SuperHandleCall.h"
+
+using std::cout;
+using std::endl;
+
+Employee* SuperHandleCall::handleCall(Call &call) {
+  cout << self->getName() << " handle the call" << endl;
+  return self;
+}

@@ -1,0 +1,67 @@
+#include <iostream>
+#include <cstdlib>
+
+
+using namespace std;
+
+int times = 0;
+int breakPoint;
+
+bool drop(int floor) {
+  if (floor >= breakPoint) {
+    cout << "Egg breaks at the " << floor << " floor " << endl;
+    return false;
+  }
+  times++;
+  cout << "Egg doesn't break at the " << floor << " floor " << endl;
+  return true;
+}
+
+int dropFirst(int bottom, int top) {
+  int mid = bottom + (top - bottom + 1)/2;
+  if (!drop(mid)) {
+    return bottom;
+  }
+  return dropFirst(mid+1, top);
+}
+
+int dropSecond(int start) {
+  cout << "start drop second egg from floor " << start << endl;
+  int dropFloor = start;
+  while(drop(dropFloor)) {
+    dropFloor++;
+  }
+  return dropFloor;
+}
+
+void trial1() {
+  int firstBreakPoint;
+  firstBreakPoint = dropFirst(1, 100);
+  int secondBreakPoint;
+  secondBreakPoint = dropSecond(firstBreakPoint);
+  cout << "drop times:" << times << endl;
+}
+
+void trial2() {
+  int floor = 14;
+  int range = 13;
+  while (drop(floor)) {
+    floor += range;
+    range--;
+  }
+  floor -= (range+1);
+  floor++;
+  int secondBreakPoint = dropSecond(floor);
+  cout << "drop times:" << times << endl;
+}
+
+int main() {
+
+  cin >> breakPoint;
+  cout << "break point is at the " << breakPoint << endl;
+  trial1();
+  times = 0;
+  trial2();
+
+  return 0;
+}

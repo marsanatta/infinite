@@ -1,0 +1,39 @@
+#include <iostream>
+#include "BitManipulation.h"
+
+using namespace std;
+
+int createMask() {
+  int mask = ~0;
+  for (int i = 0; i < 32; i+=2) {
+    setBit(mask, i, false);
+  }
+  return mask;
+}
+
+//createMask takes too much instructions
+int swap(int val) {
+  int mask = createMask();
+  int notMask = ~mask;
+  int temp1 = (val & mask) >> 1;
+  int temp2 = (val & notMask) << 1;
+  return temp1 | temp2;
+}
+
+//directly get the mask by Hexa value
+int fastSwap(int val) {
+  return ((val & 0xaaaaaaaa) >> 1) | ((val & 0x55555555) << 1);
+}
+
+int main() {
+
+  int n;
+  cin >> n;
+  cout << intToBinaryString(n) << endl;
+  int result = swap(n);
+  cout << intToBinaryString(result) << endl;
+  result = fastSwap(n);
+  cout << intToBinaryString(result) << endl;
+
+  return 0;
+}

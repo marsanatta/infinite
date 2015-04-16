@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstring>
+  using std::cin;
+  using std::cout;
+  using std::memset;
+
+int a[100000];
+int counter[100001];
+long long tab[100001] = {};
+
+int main()
+{
+  int n;
+  cin >> n;
+
+  memset(counter, 0, sizeof(counter));
+  for (int i = 0; i < n; ++i) {
+    cin >> a[i];
+    counter[a[i]] += 1;
+  }
+
+  tab[0] = 0;
+  tab[1] = counter[1];
+  for (int i = 2; i <= 100000; ++i) {
+    tab[i] = max(tab[i-1], tab[i-2] + (long long) counter[i] * i);
+  }
+  cout << tab[100000] << "\n";
+
+  return 0;
+}

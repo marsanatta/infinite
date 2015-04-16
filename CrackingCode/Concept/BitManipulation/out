@@ -1,0 +1,138 @@
+Enter size:
+Enter missing:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+13
+14
+========================= AT COL: 0
+find an even:0
+find an odd:1
+find an even:2
+find an odd:3
+find an even:4
+find an odd:5
+find an even:6
+find an odd:7
+find an even:8
+find an odd:9
+find an even:10
+find an odd:11
+find an odd:13
+find an even:14
+oddsSize: 7 evensSize: 7
+col: 0 is 0
+========================= AT COL: 1
+find an even:0
+find an odd:2
+find an even:4
+find an odd:6
+find an even:8
+find an odd:10
+find an odd:14
+oddsSize: 4 evensSize: 3
+col: 1 is 0
+========================= AT COL: 2
+find an even:0
+find an odd:4
+find an even:8
+oddsSize: 1 evensSize: 2
+col: 2 is 1
+========================= AT COL: 3
+find an even:4
+oddsSize: 0 evensSize: 1
+col: 3 is 1
+========================= AT COL: 4
+oddsSize: 0 evensSize: 0
+col: 4 is 0
+========================= AT COL: 5
+oddsSize: 0 evensSize: 0
+col: 5 is 0
+========================= AT COL: 6
+oddsSize: 0 evensSize: 0
+col: 6 is 0
+========================= AT COL: 7
+oddsSize: 0 evensSize: 0
+col: 7 is 0
+========================= AT COL: 8
+oddsSize: 0 evensSize: 0
+col: 8 is 0
+========================= AT COL: 9
+oddsSize: 0 evensSize: 0
+col: 9 is 0
+========================= AT COL: 10
+oddsSize: 0 evensSize: 0
+col: 10 is 0
+========================= AT COL: 11
+oddsSize: 0 evensSize: 0
+col: 11 is 0
+========================= AT COL: 12
+oddsSize: 0 evensSize: 0
+col: 12 is 0
+========================= AT COL: 13
+oddsSize: 0 evensSize: 0
+col: 13 is 0
+========================= AT COL: 14
+oddsSize: 0 evensSize: 0
+col: 14 is 0
+========================= AT COL: 15
+oddsSize: 0 evensSize: 0
+col: 15 is 0
+========================= AT COL: 16
+oddsSize: 0 evensSize: 0
+col: 16 is 0
+========================= AT COL: 17
+oddsSize: 0 evensSize: 0
+col: 17 is 0
+========================= AT COL: 18
+oddsSize: 0 evensSize: 0
+col: 18 is 0
+========================= AT COL: 19
+oddsSize: 0 evensSize: 0
+col: 19 is 0
+========================= AT COL: 20
+oddsSize: 0 evensSize: 0
+col: 20 is 0
+========================= AT COL: 21
+oddsSize: 0 evensSize: 0
+col: 21 is 0
+========================= AT COL: 22
+oddsSize: 0 evensSize: 0
+col: 22 is 0
+========================= AT COL: 23
+oddsSize: 0 evensSize: 0
+col: 23 is 0
+========================= AT COL: 24
+oddsSize: 0 evensSize: 0
+col: 24 is 0
+========================= AT COL: 25
+oddsSize: 0 evensSize: 0
+col: 25 is 0
+========================= AT COL: 26
+oddsSize: 0 evensSize: 0
+col: 26 is 0
+========================= AT COL: 27
+oddsSize: 0 evensSize: 0
+col: 27 is 0
+========================= AT COL: 28
+oddsSize: 0 evensSize: 0
+col: 28 is 0
+========================= AT COL: 29
+oddsSize: 0 evensSize: 0
+col: 29 is 0
+========================= AT COL: 30
+oddsSize: 0 evensSize: 0
+col: 30 is 0
+========================= AT COL: 31
+oddsSize: 0 evensSize: 0
+col: 31 is 0
+find missing:12

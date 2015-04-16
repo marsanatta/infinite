@@ -1,0 +1,5 @@
+#include "ctest.h"
+
+void cprint(const char* str) {
+  printf("%s\n", strs);
+}

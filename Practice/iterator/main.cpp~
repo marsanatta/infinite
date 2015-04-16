@@ -1,0 +1,43 @@
+#include <vector>
+#include <map>
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cctype>
+
+template <typename T>
+bool sortFunc (T v1, T v2) {
+    return (v1 > v2);
+}
+
+int main() {
+
+  using namespace std;
+  vector<int> vect;
+  for (int i = 0; i < 6; i++) {
+    vect.push_back(i);
+  }
+  vector<int>::const_iterator it;
+  it = vect.begin();
+  while (it != vect.end()) {
+    cout << *it << " ";
+    it++;
+  }
+  cout << endl;
+
+  sort(vect.begin(), vect.end(), sortFunc<int>);
+  for (auto it = vect.begin(); it != vect.end(); it++)
+    cout << *it << " ";
+  cout << endl;
+
+  map<int, string> mp;
+  mp.insert(make_pair(4, "apple"));
+  mp.insert(make_pair(2, "orange"));
+  mp.insert(make_pair(1, "banana"));
+  
+  for (auto it = mp.begin(); it != mp.end(); it++) {
+    cout << it->first << " | " << it->second << endl;
+  }
+
+  return 0;
+}

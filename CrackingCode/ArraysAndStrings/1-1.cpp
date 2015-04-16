@@ -1,0 +1,57 @@
+/*
+ * Implement an algorithm to determine if a string has all unique
+ * characters. What if you can not use additional data structures?
+ */
+
+#include <iostream>
+#include <cstring>
+#include <algorithm>
+
+using namespace std;
+
+bool hasAppeared[256];
+
+bool areCharsUnique1(string s){
+  for (int i = 0; i < s.length(); i++) {
+    int charInt = s[i];
+    if (hasAppeared[charInt])
+      return false;
+    hasAppeared[charInt] = true;
+  }
+  return true;
+}
+
+bool areCharsUnique2(string s){
+  for (int i = 0; i < s.length(); i++) {
+    for (int j = 0; j < s.length(); j++) {
+      if (i == j)
+        continue;
+      if (s[i] == s[j])
+        return false;
+    }
+  }
+  return true;
+}
+
+bool areCharsUnique3(string s){
+  sort(s.begin(), s.end());
+  for (int i = 0; i < s.length() - 1; i++) {
+    if (s[i] == s[i+1])
+      return false;
+  }
+  return true;
+}
+
+int main() {
+
+  string s;
+  cin >> s;
+
+
+  cout.setf(ios::boolalpha);
+  cout << "way1:" << areCharsUnique1(s) << endl;
+  cout << "way2:" << areCharsUnique2(s) << endl;
+  cout << "way3:" << areCharsUnique3(s) << endl;
+
+  return 0;
+}

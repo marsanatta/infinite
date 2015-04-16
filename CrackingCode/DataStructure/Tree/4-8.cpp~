@@ -1,0 +1,63 @@
+#include <iostream>
+#include <vector>
+#include "binarySearchTree.h"
+
+using namespace std;
+
+void printPath(vector<int>path, int start, int end) {
+  cout << "printing path: " << endl;
+  for (int i = start; i <= end; i++) {
+    cout << path.at(i) << " -> ";
+  }
+  cout << endl;
+}
+
+void findSum(Node* head, int level, vector<int>path, int target) {
+  if (head == NULL) {
+    return;
+  }
+
+  int sum = 0;
+  path.push_back(head->value);
+  for (int i = level; i >= 0; i--) {
+    sum += path.at(i);
+    if (sum == target) {
+      printPath(path, i, level);
+    }
+  }
+
+  findSum(head->left, level+1, path, target);
+  findSum(head->right, level+1, path, target);
+}
+
+int main() {
+
+  int n; 
+  cin >> n;
+  BinarySearchTree t = generateRandomTree(n, -10, 10);
+  t.dfsRecursive(PREORDER, t.getRoot());
+  
+  /*vector<int> a;
+  a.push_back(123);
+  a.push_back(456);
+  vector<int> b;
+  b = a;
+  cout << "***" << endl;
+  for (int i = 0; i < b.size(); i++) {
+    cout << b.at(i) << endl;
+  }*/
+  
+  while(true) {
+    int target;
+    int headValue;
+    cout << "Enter a target sum: " << endl;
+    cin >> target;
+    cout << "Enter head value: " << endl;
+    cin >> headValue;
+    Node* head = t.search(headValue, NULL);
+    vector<int> path;
+    findSum(head, 0, path, target);
+  }
+  
+  return 0;
+}

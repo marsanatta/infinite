@@ -1,0 +1,16 @@
+
+int ReadNumber();
+void WriteAnswer(int x);
+
+int main() {
+  int x = ReadNumber();
+  int y = ReadNumber();
+  WriteAnswer(x + y);
+
+  int length, width = 5;
+  WriteAnswer(length);
+  WriteAnswer(width);
+
+
+  return 0;
+}

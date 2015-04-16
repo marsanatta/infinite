@@ -1,0 +1,9 @@
+all:
+#	g++ 8-1.cpp -o 8-1
+#	g++ 8-3.cpp -o 8-3 -std=c++11
+#	g++ 8-4.cpp -o 8-4 -std=c++11
+#	g++ 8-5.cpp -o 8-5 -std=c++11
+#	g++ 8-6.cpp -o 8-6 -std=c++11
+#	g++ 8-7.cpp -o 8-7 -std=c++11
+	g++ 8-8.cpp -o 8-8 -std=c++11
+#	g++ 8-2.cpp -o 8-2

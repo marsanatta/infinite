@@ -1,0 +1,89 @@
+#include <iostream>
+#include <cstdlib>
+#include "binarySearchTree.h"
+
+void dfsBuildParent(Node* n, Node* parent){
+  if (n == NULL) {
+    return;
+  }
+  n->parent = parent;
+  if (n->left != NULL) {
+    dfsBuildParent(n->left, n);
+  }
+  if (n->right != NULL) {
+    dfsBuildParent(n->right, n);
+  }
+}
+
+Node* findLeftMost(Node* n) {
+  Node* cur = n;
+  while(cur->left != NULL)
+    cur = cur->left;
+  return cur;
+}
+
+Node* findParentLeft(Node* n) {
+  Node* cur = n;
+  while(cur->parent != NULL) {
+    if (cur->parent->left == cur) {
+      return cur->parent;
+    }
+    cur = cur->parent;
+  }
+  return NULL;
+}
+
+Node* findInOrderSuccessor(Node* n) {
+  if (n->right != NULL) {
+    return findLeftMost(n->right);
+  }
+  else {
+    if (n->parent == NULL) {
+      return NULL;
+    }
+    if (n->parent->left == n) {
+      return n->parent;
+    }
+    else if (n->parent->right == n) {
+      return findParentLeft(n->parent);
+    }
+  }
+}
+
+using namespace std;
+
+int main() {
+
+
+  int n;
+  cin >> n;
+  BinarySearchTree t;
+  srand(time(NULL));
+  for (int i = 0; i < n; i++) {
+    t.insert(1 + rand()%100);
+  }
+  cout << "preorder" << endl;
+  t.dfsRecursive(PREORDER, t.getRoot());
+  cout << "inorder" << endl;
+  t.dfsRecursive(INORDER, t.getRoot());
+  dfsBuildParent(t.getRoot(), NULL);
+
+  while(true) {
+    int value;
+    cout << "Enter a node to find its successor:" << endl;
+    cin >> value;
+    Node* fp;
+    Node* f = t.search(value, &fp);
+    if (f == NULL) {
+      cout << "there's no such node" << endl;
+      continue;
+    }    
+    Node* succ = findInOrderSuccessor(f);
+    if (succ != NULL) {
+      cout << value << "'s successor is " << succ->value << endl;
+    }
+    else 
+      cout << "there's no successor " << endl;
+  }
+  return 0;
+}

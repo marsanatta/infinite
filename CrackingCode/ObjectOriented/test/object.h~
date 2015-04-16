@@ -1,0 +1,14 @@
+class Foo {
+
+public:
+  Foo() {
+    bar = 10;
+  }
+  
+  void setBar(int _bar) const{
+    bar = _bar;
+  }
+
+private:
+  mutable int bar;
+};

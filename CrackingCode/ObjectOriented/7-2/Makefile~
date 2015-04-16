@@ -1,0 +1,2 @@
+all:
+	g++ main.cpp HandleCallBehavior.cpp NormalHandleCall.cpp SuperHandleCall.cpp -o main
