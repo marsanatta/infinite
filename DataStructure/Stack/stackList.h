@@ -34,6 +34,14 @@ class Stack {
                 return ret;
             }
         }
+        
+        bool empty() {
+            if ( top == nullptr )
+                return true;
+            else 
+                return false;
+        }
+
 
         Node* peek() {
             return top;
