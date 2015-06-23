@@ -5,4 +5,5 @@ all:
 #	g++ staticMemberTest.cpp -o staticMemberTest
 #	gcc crashTest.c -o crashTest
 #	gcc string.c -o string
-	g++ macroFunction.cpp -o macroFunction -std=c++11
+#	g++ macroFunction.cpp -o macroFunction -std=c++11
+	g++ iterator.cpp -o iterator -std=c++11
