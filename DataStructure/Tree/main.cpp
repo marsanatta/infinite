@@ -14,5 +14,9 @@ int main(int argc, const char *argv[])
     t.dfs_root();
 
     t.bfs();
+    
+    std::cout.setf(std::ios::boolalpha);    
+    std::cout << t.isBalanced() << std::endl;
+
     return 0;
 }
