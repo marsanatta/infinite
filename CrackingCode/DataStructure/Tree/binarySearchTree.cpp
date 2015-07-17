@@ -95,7 +95,7 @@ void BinarySearchTree::dfs(int mode) {
       else if ((cur->left == NULL && cur->right == NULL) ||
                (cur->left != NULL && cur->left->isTraversed && cur->right == NULL) ||
                (cur->right != NULL && cur->right->isTraversed && cur->left == NULL) ||
-               (cur->left != NULL && cur->left->isTraversed && cur->right != NULL & cur->right->isTraversed)) {
+               (cur->left != NULL && cur->left->isTraversed && cur->right != NULL && cur->right->isTraversed)) {
         s.pop();
         cur->isTraversed = true;
         cout << cur->value << endl;

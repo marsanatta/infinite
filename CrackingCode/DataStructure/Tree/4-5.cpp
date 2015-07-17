@@ -48,6 +48,7 @@ Node* findInOrderSuccessor(Node* n) {
       return findParentLeft(n->parent);
     }
   }
+  return NULL;
 }
 
 using namespace std;
